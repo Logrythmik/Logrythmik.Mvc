@@ -112,9 +112,9 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Logrythmik.Common\Logrythmik.Common.csproj">
+    <ProjectReference Include="..\Logrythmik.Mvc\Logrythmik.Mvc.csproj">
       <Project>{A7AC23EB-0AFE-4139-9135-FCB08172EF53}</Project>
-      <Name>Logrythmik.Common</Name>
+      <Name>Logrythmik.Mvc</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

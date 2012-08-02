@@ -9,7 +9,7 @@ using Microsoft.Practices.Unity;
 
 namespace Logrythmik.Mvc.Controllers
 {
-    public abstract class BaseController : Controller, IBaseController
+    public abstract class BaseController : Controller
     {
         #region Constructor
 
@@ -31,122 +31,15 @@ namespace Logrythmik.Mvc.Controllers
         }
 
         #endregion
-      
-        #region Protected Members
-
-        /// <summary>
-        /// Gets the view messages.
-        /// </summary>
-        /// <value>The view messages.</value>
-        public List<ViewMessage> ViewMessages 
-        { 
-            get
-            {
-                return this.ViewData.GetOrAdd(Constants.Messages, 
-                    () => new List<ViewMessage>());
-            }
-        }
-
-        protected Exception Exception;
-
-        #endregion
-
+     
         #region Properties
         
         [Dependency]
         public IDataCacheProxy DataCache { get; set; }
 
         #endregion
-      
-        #region Redirect Messaging
-
-        /// <summary>
-        /// Adds the redirect message.
-        /// </summary>
-        /// <param name="messageView">The message view.</param>
-        public void AddRedirectMessage(ViewMessage messageView)
-        {
-            if (messageView == null) return;
-
-            var messages = this.TempData.GetOrAdd(Constants.Messages, () => new List<ViewMessage>());
-            messages.Add(messageView);
-        }
-
-        #endregion
-
-        #region Messaging
-
-        /// <summary>
-        /// Adds the exception.
-        /// </summary>
-        /// <param name="exception">The exception.</param>
-        public void AddException(Exception exception)
-        {
-            if (this.Request.IsLocal)
-                Exception = exception;
-            else
-                AddErrorMessage("An error has occurred.");
-        }
-
-        /// <summary>
-        /// Adds the message.
-        /// </summary>
-        /// <param name="messageView">The message view.</param>
-        public void AddMessage(ViewMessage messageView)
-        {
-            ViewMessages.Add(messageView);
-        }
-
-        /// <summary>
-        /// Adds a normal message to the viewdata.
-        /// </summary>
-        /// <param name="message">The message.</param>
-        public void AddMessage(string message)
-        {
-            ViewMessages.Add(new ViewMessage(message, MessageType.Normal));
-        }
-
-        /// <summary>
-        /// Adds a error message to the viewdata.
-        /// </summary>
-        /// <param name="message">The message.</param>
-        public void AddErrorMessage(string message)
-        {
-            ViewMessages.Add(new ViewMessage(message, MessageType.Error));
-        }
-
-        /// <summary>
-        /// Adds a warning message to the viewdata.
-        /// </summary>
-        /// <param name="message">The message.</param>
-        public void AddWarningMessage(string message)
-        {
-            ViewMessages.Add(new ViewMessage(message, MessageType.Warning));
-        }
-
-        /// <summary>
-        /// Adds the information message to the viewdata.
-        /// </summary>
-        /// <param name="message">The message.</param>
-        public void AddInformationMessage(string message)
-        {
-            ViewMessages.Add(new ViewMessage(message, MessageType.Information));
-        }
-
-        /// <summary>
-        /// Adds a success message to the viewdata.
-        /// </summary>
-        /// <param name="message">The message.</param>
-        public void AddSuccessMessage(string message)
-        {
-            ViewMessages.Add(new ViewMessage(message, MessageType.Success));
-        }
-
-        #endregion
 
         #region Action Results
-
-
 
         #region Exceptions
 
@@ -249,34 +142,7 @@ namespace Logrythmik.Mvc.Controllers
 
         #region Temp Data
 
-        /// <summary>
-        /// Stores data in a temp.
-        /// </summary>
-        /// <param name="key">The key.</param>
-        /// <param name="value">The value.</param>
-        public void StoreTemp(string key, object value)
-        {
-            this.TempData[key] = value;
-        }
 
-        /// <summary>
-        /// Gets the temp data.
-        /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <param name="key">The key.</param>
-        /// <returns></returns>
-        public T GetTemp<T>(string key) where T : class, new()
-        {
-            T result = default(T);
-            if (this.TempData[key] != null)
-                result = (T)this.TempData[key];
-
-            //TempData only holds the bits for one request
-            //so put it back in to be sure that we can get it again
-            StoreTemp(key, result);
-            return result;
-
-        }
 
         #endregion
 

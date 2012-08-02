@@ -1,11 +1,23 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Logrythmik.Mvc", "Logrythmik.Mvc\Logrythmik.Mvc.csproj", "{B30B3703-C395-4107-8768-32C517D67F54}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Logrythmik.Mvc.Web", "Logrythmik.Mvc.Web\Logrythmik.Mvc.Web.csproj", "{B30B3703-C395-4107-8768-32C517D67F54}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Logrythmik.Common", "Logrythmik.Common\Logrythmik.Common.csproj", "{A7AC23EB-0AFE-4139-9135-FCB08172EF53}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Logrythmik.Mvc", "Logrythmik.Mvc\Logrythmik.Mvc.csproj", "{A7AC23EB-0AFE-4139-9135-FCB08172EF53}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Logrythmik.Data", "Logrythmik.Data\Logrythmik.Data.csproj", "{ABDB0E0F-CFF5-49A5-A769-04D54431C69C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Logrythmik.Mvc.Data", "Logrythmik.Mvc.Data\Logrythmik.Mvc.Data.csproj", "{ABDB0E0F-CFF5-49A5-A769-04D54431C69C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{4F622DBF-18E7-4EE3-A0AB-60514403B97B}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.Config = .nuget\NuGet.Config
+		.nuget\nuget.exe = .nuget\nuget.exe
+		.nuget\NuGet.targets = .nuget\NuGet.targets
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{740A80FD-E172-4DAA-B894-F176939181F3}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

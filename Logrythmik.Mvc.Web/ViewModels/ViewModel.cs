@@ -15,6 +15,7 @@ namespace Logrythmik.Mvc.ViewModels
         where TViewType : ViewModel<TViewType, TEntityType, TKeyType, TDataContext>, new()
         where TDataContext : IDataContext, new()
     {
+
         #region Static Members
         // ReSharper disable StaticFieldInGenericType
 
@@ -55,6 +56,8 @@ namespace Logrythmik.Mvc.ViewModels
         /// </summary>
         static ViewModel()
         {
+            // VIEW TO MODEL
+
             // Always create a basic map on view model creation, then expose
             // the mapping expression for extension in the consuming classes
             ViewToModelMap = Mapper.CreateMap<TViewType, TEntityType>();
@@ -74,6 +77,8 @@ namespace Logrythmik.Mvc.ViewModels
 
             if (modelType.IsA<IUpdated>())
                 ViewToModelMap.ForMember("Updated", m => m.Ignore());
+
+            // MODEL TO VIEW
 
             ModelToViewMap = Mapper.CreateMap<TEntityType, TViewType>();
         }

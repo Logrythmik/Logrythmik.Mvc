@@ -1,0 +1,237 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{B30B3703-C395-4107-8768-32C517D67F54}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Logrythmik.Mvc</RootNamespace>
+    <AssemblyName>Logrythmik.Mvc</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AutoMapper, Version=1.1.0.188, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\_Lib\Packages\AutoMapper.1.1.0.118\lib\AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="Elmah, Version=1.1.11517.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\_Lib\Packages\elmah.1.1\lib\Elmah.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Practices.ServiceLocation, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\_Lib\Packages\Unity.2.0\lib\20\Microsoft.Practices.ServiceLocation.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity, Version=2.0.414.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\_Lib\Packages\Unity.2.0\lib\20\Microsoft.Practices.Unity.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Configuration, Version=2.0.414.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\_Lib\Packages\Unity.2.0\lib\20\Microsoft.Practices.Unity.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Interception, Version=2.0.414.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\_Lib\Packages\Unity.2.0\lib\20\Microsoft.Practices.Unity.Interception.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Interception.Configuration, Version=2.0.414.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\_Lib\Packages\Unity.2.0\lib\20\Microsoft.Practices.Unity.Interception.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="NLog">
+      <HintPath>..\_Lib\Packages\NLog.2.0.0.0\lib\NET40\NLog.dll</HintPath>
+    </Reference>
+    <Reference Include="NLog.Extended">
+      <HintPath>..\_Lib\Packages\NLog.2.0.0.0\lib\NET40\NLog.Extended.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.ComponentModel.DataAnnotations">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Abstractions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Web.Mvc, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Web.Routing">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ActionResults\ExcelResult.cs" />
+    <Compile Include="ActionResults\ImageResult.cs" />
+    <Compile Include="Binders\InputValidationModelBinder.cs" />
+    <Compile Include="Binders\ViewModelBinder.cs" />
+    <Compile Include="Constants.cs" />
+    <Compile Include="Controllers\ActionFilters\HandleErrorFilter.cs" />
+    <Compile Include="Controllers\ActionFilters\SetCultureAttribute.cs" />
+    <Compile Include="Controllers\BaseController.cs" />
+    <Compile Include="Controllers\EntityController.cs" />
+    <Compile Include="Controllers\Exceptions\MessageException.cs" />
+    <Compile Include="Controllers\ControllerActionInvoker.cs" />
+    <Compile Include="Controllers\Exceptions\PartialSuccessException.cs" />
+    <Compile Include="Controllers\IBaseController.cs" />
+    <Compile Include="EmbeddedViewEngine\EmbeddedViewsConfigurator.cs" />
+    <Compile Include="EmbeddedViewEngine\EmbeddedWebFormViewsViewEngine.cs" />
+    <Compile Include="EmbeddedViewEngine\EmbeddedRazorViewsViewEngine.cs" />
+    <Compile Include="EmbeddedViewEngine\EmbeddedViewsVirtualPathProvider.cs" />
+    <Compile Include="EmbeddedViewEngine\EmbeddedViews\AssemblyResourceFile.cs" />
+    <Compile Include="EmbeddedViewEngine\EmbeddedViews\EmbeddedView.cs" />
+    <Compile Include="EmbeddedViewEngine\EmbeddedViews\EmbeddedViewResolver.cs" />
+    <Compile Include="EmbeddedViewEngine\EmbeddedViews\EmbeddedViewTable.cs" />
+    <Compile Include="EmbeddedViewEngine\EmbeddedViews\EmbeddedViewVirtualPathProvider.cs" />
+    <Compile Include="Extensions\BasicExtensions.cs" />
+    <Compile Include="Extensions\ControllerExtensions.cs" />
+    <Compile Include="Extensions\IndexedItem.cs" />
+    <Compile Include="Extensions\SectionExtensions.cs" />
+    <Compile Include="Extensions\ViewResultExtensions.cs" />
+    <Compile Include="Managers\BaseManager.cs" />
+    <Compile Include="Proxies\ElmahExceptionProxy.cs" />
+    <Compile Include="Proxies\Interfaces\IMailProxy.cs" />
+    <Compile Include="Proxies\Interfaces\IMembershipProxy.cs" />
+    <Compile Include="Proxies\Interfaces\IRolesProxy.cs" />
+    <Compile Include="Proxies\MembershipProxy.cs" />
+    <Compile Include="Proxies\NLogLogProxy.cs" />
+    <Compile Include="Proxies\NLogProxyProvider.cs" />
+    <Compile Include="Proxies\RolesProxy.cs" />
+    <Compile Include="Proxies\SmtpMailProxy.cs" />
+    <Compile Include="Routing\LowercaseRoute.cs" />
+    <Compile Include="Utilities\EnumHelper.cs" />
+    <Compile Include="Utilities\HtmlUtilities.cs" />
+    <Compile Include="Utilities\UsStates.cs" />
+    <Compile Include="ViewModels\Attributes\DataListAttribute.cs" />
+    <Compile Include="ViewModels\Attributes\DisplayOrderAttribute.cs" />
+    <Compile Include="ViewModels\Attributes\EmptyStringAsNullAttribute.cs" />
+    <Compile Include="ViewModels\Attributes\ExampleAttribute.cs" />
+    <Compile Include="ViewModels\Attributes\FieldAttributes.cs" />
+    <Compile Include="ViewModels\Attributes\HelpAttribute.cs" />
+    <Compile Include="ViewModels\ExampleViewModel.cs" />
+    <Compile Include="ViewModels\MessageType.cs" />
+    <Compile Include="ViewModels\MetadataProvider.cs" />
+    <Compile Include="ViewModels\Validation\EmailAttribute.cs" />
+    <Compile Include="ViewModels\Validation\HasAnyAttribute.cs" />
+    <Compile Include="ViewModels\Validation\ImageAttribute.cs" />
+    <Compile Include="ViewModels\Validation\PhoneAttribute.cs" />
+    <Compile Include="ViewModels\Validation\RequiredIfAttribute.cs" />
+    <Compile Include="ViewModels\ViewMessage.cs" />
+    <Compile Include="Managers\IEntityManager.cs" />
+    <Compile Include="Managers\EntityManager.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Proxies\DataCacheProxy.cs" />
+    <Compile Include="Proxies\FormsAuthenticationProxy.cs" />
+    <Compile Include="Proxies\Interfaces\IDataCacheProxy.cs" />
+    <Compile Include="Proxies\Interfaces\IFormsAuthenticationProxy.cs" />
+    <Compile Include="Utilities\Enum.cs" />
+    <Compile Include="ViewModels\ViewModel.cs" />
+    <Compile Include="Extensions\ExceptionExtensions.cs" />
+    <Compile Include="Extensions\HtmlExtensions.cs" />
+    <Compile Include="Extensions\UrlExtensions.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Proxies\Interfaces\IIoProxy.cs" />
+    <Compile Include="Proxies\IoProxy.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Logrythmik.Mvc\Logrythmik.Mvc.csproj">
+      <Project>{A7AC23EB-0AFE-4139-9135-FCB08172EF53}</Project>
+      <Name>Logrythmik.Mvc</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Logrythmik.Mvc.Data\Logrythmik.Mvc.Data.csproj">
+      <Project>{ABDB0E0F-CFF5-49A5-A769-04D54431C69C}</Project>
+      <Name>Logrythmik.Mvc.Data</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Readme\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>xcopy "$(ProjectDir)$(OutDir)Logrythmik*" "E:\Projects\Logrythmik\WWM - SneezeBox\_Lib\Assemblies" /Y /I /S</PostBuildEvent>
+  </PropertyGroup>
+  <Import Project="$(SolutionDir)\.nuget\nuget.targets" />
+</Project>

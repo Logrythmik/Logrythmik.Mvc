@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,28 +8,8 @@ using Logrythmik.Mvc.ViewModels.Attributes;
 
 namespace Logrythmik.Mvc
 {
- 
-    public static class UrlExtensions
-    {
-        public static Uri BaseUri(this UrlHelper urlHelper)
-        {
-            var baseUrl = urlHelper.RequestContext.HttpContext.Request.Url.GetLeftPart(UriPartial.Authority);
-
-            return new Uri(baseUrl);
-        }
-
-        public static string GetBaseUrl(this UrlHelper urlHelper)
-        {
-            if (urlHelper.RequestContext.HttpContext.Request.Url != null)
-                return "{1}://{0}".ToFormat(
-                    urlHelper.RequestContext.HttpContext.Request.Url.Host, 
-                    urlHelper.RequestContext.HttpContext.Request.Url.Scheme);
-            return "http://local.sneezebox.com";
-        }
-    }
     public static class ViewResultExtensions
     {
-
         public static ActionResult DressViewModel<TViewType>(this ActionResult actionResult, Action<TViewType> dressAction)
             where TViewType: class, new()
         {
@@ -55,7 +35,7 @@ namespace Logrythmik.Mvc
         }
 
         public static T GetData<T>(this ViewDataDictionary viewData, string key)
-                 where T : IComparable
+            where T : IComparable
         {
             if (viewData.ContainsKey(key))
                 return (T)Convert.ChangeType(viewData[key], typeof(T));
@@ -63,7 +43,7 @@ namespace Logrythmik.Mvc
         }
 
         public static T GetData<T>(this ViewDataDictionary viewData)
-               where T : IComparable
+            where T : IComparable
         {
             if (viewData.ContainsKey(typeof(T).ToString()))
                 return (T)Convert.ChangeType(viewData[typeof(T).ToString()], typeof(T));
@@ -82,9 +62,9 @@ namespace Logrythmik.Mvc
             if (modelMetadata == null) throw new ArgumentNullException("modelMetadata");
 
             var attributeDictionary = modelMetadata.AdditionalValues.ContainsKey(FieldAttributes.FIELD_CONSTANT) ?
-                    modelMetadata.AdditionalValues[FieldAttributes.FIELD_CONSTANT] as Dictionary<string, object> 
-                    ?? new Dictionary<string, object>()
-                    :  new Dictionary<string, object>();
+                                                                                                                     modelMetadata.AdditionalValues[FieldAttributes.FIELD_CONSTANT] as Dictionary<string, object> 
+                                                                                                                     ?? new Dictionary<string, object>()
+                                          :  new Dictionary<string, object>();
 
             if (!string.IsNullOrEmpty(cssClass))
             {
@@ -115,7 +95,7 @@ namespace Logrythmik.Mvc
             if(container.GetType() != viewPage.ViewData.ModelMetadata.ContainerType)
                 throw new ApplicationException(
                     string.Format(
-                    "Container type mismatch on ViewModel. Expected: {0} when it was actually {1}",
+                        "Container type mismatch on ViewModel. Expected: {0} when it was actually {1}",
                         viewPage.ViewData.ModelMetadata.ContainerType, 
                         container.GetType()));
 
@@ -138,7 +118,7 @@ namespace Logrythmik.Mvc
             var containerType = viewData.ModelMetadata.ContainerType;
 
             return ((TAttribute[])containerType.GetProperty(viewData.ModelMetadata.PropertyName)
-                                                .GetCustomAttributes(typeof(TAttribute), inherit)).FirstOrDefault();
+                                      .GetCustomAttributes(typeof(TAttribute), inherit)).FirstOrDefault();
         }
 
         public static MvcHtmlString ScriptBlock(
