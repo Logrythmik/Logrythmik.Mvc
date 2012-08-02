@@ -1,0 +1,11 @@
+*.swp
+*.suo
+*.user
+[Bb]in/
+[Oo]bj/
+_[Rr]esharper.*/
+TestResult.xml
+/lib/
+build
+rakefile.config.rb
+[Pp]ackages/
